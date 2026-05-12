@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-alexandria: 'Alexandria', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter) !important;
+  background-color: #f8fafc;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+[lang="ar"], [dir="rtl"], [lang="ar"] * {
+  font-family: var(--font-alexandria) !important;
+}
+
+/* Arabic responsive font scaling */
+html[lang="ar"] {
+  font-size: 100%;
+}
+
+@media (max-width: 640px) {
+  html[lang="ar"] {
+    font-size: 95%;
+  }
+  html:not([lang="ar"]) {
+    font-size: 15px;
+  }
+}
+
+/* Page Transitions */
+.page-transition {
+  transition: all 300ms ease-in-out;
+}
+
+/* Hide scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Thin admin scrollbar */
+.admin-scroll::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+.admin-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.admin-scroll::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 99px;
+}
+
+/* Admin Specific Tweaks */
+.admin-card {
+  background-color: white;
+  border-radius: 1.5rem;
+  border: 1px solid #f3f4f6;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  padding: 1.5rem;
+}
+
+/* Responsive table min-width */
+.responsive-table {
+  min-width: 640px;
+}
+
+/* Mobile full-screen modal */
+@media (max-width: 640px) {
+  .modal-mobile-full {
+    position: fixed !important;
+    inset: 0 !important;
+    border-radius: 0 !important;
+    max-height: 100dvh !important;
+    overflow-y: auto !important;
+  }
+}
