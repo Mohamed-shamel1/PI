@@ -28,13 +28,13 @@ Follow these steps to set up and run the project locally after cloning the repos
 3. **Configure Environment Variables:**
    Create a `.env` file in the `backend/` folder and copy the following template:
    ```env
-   DATABASE_URL="mysql://root:PASSWORD@localhost:3306/food_pi_db"
+   DATABASE_URL="mysql://root:@localhost:3306/electro_pi_db"
    PORT=5000
    JWT_SECRET="your_super_secret_key"
    JWT_REFRESH_SECRET="your_refresh_secret_key"
    JWT_EXPIRE="1d"
    ```
-   *Note: Update the `DATABASE_URL` with your MySQL credentials.*
+   *Note: go and make a new database for this project using phpmyadmin.*
 
 4. **Initialize the Database:**
    Push the Prisma schema to your local MySQL instance:
